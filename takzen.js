@@ -24,12 +24,7 @@ window.onload = function() {
             });
         });
     };
-  fetch("header.html")
-    .then((res) => res.text())
-    .then(
-      (data) => (document.getElementById("main-header").innerHTML = data)
-    );
-
+  
 window.clearResults = function() {
     let code = prompt("أدخل الرمز السري لحذف جميع النتائج:");
     if (code === "622023abdo") { // يمكنك تغيير الرمز السري هنا
