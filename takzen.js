@@ -14,7 +14,7 @@ window.onload = function() {
             btn.addEventListener('click', function() {
                 let index = this.getAttribute('data-index');
                 let code = prompt("أدخل الرمز السري للحذف:");
-                if (code === "1234") { // غيّر الرمز السري كما تريد
+                if (code === "622023abdo") { // غيّر الرمز السري كما تريد
                     results.splice(index, 1);
                     localStorage.setItem("results", JSON.stringify(results));
                     location.reload();
