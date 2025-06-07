@@ -1,0 +1,433 @@
+  body {
+  font-family: 'Cairo', Arial, sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* رأس الصفحة */
+header {
+  background-color: #003366;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 70px;
+}
+
+.header-container img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-left: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.header-container img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background: #ffcc00;
+  color: #003366;
+}
+
+/* صنوق ادخال اسم الطالب */
+.name-box {
+  background: #fff;
+  padding: 32px 24px 28px 24px;
+  margin: 60px auto 0 auto;
+  width: 350px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.name-box label {
+  font-size: 18px;
+  color: #003366;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.name-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px -10px 18px 0;
+  border: 1.5px solid #003366;
+  border-radius: 7px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  direction: rtl;
+}
+
+.name-box input:focus {
+  border: 1.5px solid #ffcc00;
+}
+
+.name-box button {
+  background-color: #003366;
+  color: #fff;
+  padding: 12px 0;
+  border: none;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.name-box button:hover {
+  background-color: #ffcc00;
+  color: #003366;
+}
+
+
+@media (max-width: 700px) {
+  .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .header-container img {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  .name-box {
+    width: 95%;
+    padding: 18px 8px;
+  }
+}
+/* تنسيق شكل الاختبار والاسئلة */
+
+.quiz-container {
+  background: #f9f9f9;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 32px 20px;
+  text-align: center;
+  font-family: 'Tajawal', Arial, sans-serif;
+}
+
+#player {
+  color: #2d7a5f;
+  margin-bottom: 18px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#question-box {
+  font-size: 1.15em;
+  margin-bottom: 22px;
+  color: #333;
+  min-height: 48px;
+}
+
+#options-box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.option-btn {
+  background: #fff;
+  color: #2d7a5f;
+  border: 2px solid #2d7a5f;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.option-btn:hover:enabled {
+  background: #2d7a5f;
+  color: #fff;
+}
+
+#next-btn {
+  background: #2d7a5f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+#next-btn:hover {
+  background: #24916d;
+}
+/* شكل الجدول  */
+
+.results-table-container {
+  margin: 40px auto;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+  padding: 32px 24px;
+  direction: rtl;
+  font-family: 'Tajawal', Arial, sans-serif;
+}
+
+.results-table-container h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 24px;
+  font-family: 'Tajawal', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-family: 'Tajawal', Arial, sans-serif;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #003366;
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.results-table th {
+  background-color: #003366;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.results-table tr:hover {
+  background-color: #e6f7ee;
+  transition: background 0.2s;
+}
+
+.clear-btn {
+  background: #2d7a5f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: background 0.2s;
+}
+
+.clear-btn:hover {
+  background: #24916d;
+}
+
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 18px 5px;
+    max-width: 98vw;
+  }
+
+  #question-box {
+    font-size: 1em;
+  }
+
+  .option-btn,
+  #next-btn {
+    font-size: 0.95em;
+    padding: 10px 0;
+  }
+
+  .results-table-container {
+    padding: 18px 5px;
+    max-width: 98vw;
+  }
+
+  .results-table th,
+  .results-table td {
+    font-size: 0.9em;
+    padding: 8px 4px;
+  }
+}
+
+/* جدول اسماء المنفذين */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 300px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 16px 24px;
+  text-align: center;
+}
+
+th {
+  background: #0078d7;
+  color: #fff;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+tr:not(:last-child) td {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tr:hover td {
+  background: #f0f8ff;
+}
+/* حذف فردي */
+
+/* أضف هذا إلى ملف style.css */
+.delete-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.2s;
+  margin: 0 4px;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.07);
+}
+
+.results-table td:last-child, .results-table th:last-child {
+  text-align: center;
+  width: 90px;
+}
+/* تنسيق منفذ المشروع */
+
+      .profile-container {
+        max-width: 400px;
+        margin: 60px auto;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        padding: 40px 30px 30px 30px;
+      }
+      .profile-container img.profile-pic {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 4px solid #6366f1;
+        margin-bottom: 18px;
+        object-fit: cover;
+      }
+      .profile-container h2 {
+        margin: 0 0 10px 0;
+        color: #3730a3;
+        font-size: 2rem;
+      }
+      .profile-container p {
+        color: #555;
+        margin-bottom: 22px;
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        margin-top: 18px;
+      }
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #f1f5f9;
+        color: #6366f1;
+        font-size: 1.8rem;
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.07);
+        text-decoration: none;
+      }
+      .social-links a:hover {
+        background: #6366f1;
+        color: #fff;
+        transform: translateY(-4px) scale(1.08);
+      }
+      /* Responsive */
+      @media (max-width: 500px) {
+        .profile-container {
+          padding: 25px 8px;
+        }
+      }
